@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortify Fitness </title>
+
+    <!-- aos css file cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- magnific popup css cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+
+    <!-- bootstrap cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--my code-------------------------------------------------------------------------------------------------------------------------------------->
+
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/BMIstyle.css' %}">
+    <script src="{% static 'js/functionality.js' %}"></script>
+  <title>BMI Dashboard</title>
+
+<!--my code-------------------------------------------------------------------------------------------------------------------------------------->
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header>
+
+    <div class="container">
+    
+        <a href="#" class="logo"><span>F</span>ortify<span>F</span>itness</a>
+    
+        <nav class="nav">
+            <ul>
+              <li class="nav-item"><a class="nav-link" href="/">home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/fitness">fitness</a></li>
+              <li class="nav-item"><a class="nav-link" href="/blog">blog</a></li>
+              <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    
+        <div class="fas fa-bars"></div>
+    
+    </div>
+    
+</header>
+    
+<!-- header section ends  -->
+
+<!-- calculate BMI section starts  -->
+
+
+
+
+<div class="display-4 text-center">BMI Dashboard</div>
+  
+  <div class="container" style="margin-top: 40px;">
+    <div class="row">
+      <div class="col-md-6" style="padding-bottom: 5px;">
+        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px; "
+          onclick="location.reload(true);">Clear</button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn btn-secondary" style="width: 100%; padding: 10px;"
+          onclick="BMIFunction()">Calculate</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <h4><font color="black">Weight</font></h4>
+        <form>
+          <div class="form-group">
+            <table style="width:100%">
+              <tr>
+                <td><input id="lbsInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Pounds...">
+                </td>
+                <td><font color="black">lbs</font></td>
+              </tr>
+              <tr>
+                <td><input id="kgInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Kilograms...">
+                </td>
+                <td><font color="black">kg</font></td>
+              </tr>
+              <tr>
+                <td><input id="gmInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Grams..."></td>
+                    <td><font color="black">gm</font></td>
+              </tr>
+              <tr>
+                <td><input id="ozInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Ounces..."></td>
+                    <td><font color="black">oz</font></td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <h4><font color="black">Height</font></h4>
+        <form>
+          <div class="form-group">
+            <table style="width:100%">
+              <tr>
+                <td><input id="cmInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Centimeters..."></td>
+                    <td><font color="black">cm</font></td>
+              </tr>
+              <tr>
+                <td><input id="inchInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Inches..."></td>
+                    <td><font color="black">in</font></td>
+              </tr>
+              <tr>
+                <td><input id="mInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Meters..."></td>
+                    <td><font color="black">m</font></td>
+              </tr>
+              <tr>
+                <td><input id="ftInput" type="number" step="0.0001" class="form-control form-control-lg"
+                    placeholder="Feet..."></td>
+                    <td><font color="black">ft</font></td>
+              </tr>
+            </table>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <h4><font color="black">Health Index</font></h4>
+        <form>
+          <div class="form-group">
+            <div class="indexcol" id="bmi" style="padding-left: 20px; padding-top: 10px;">
+              <p>Body Mass Index...</p>
+            </div>
+            <div class="indexcol" id="calIn" style="padding-left: 20px; padding-top: 10px;">
+              <p>Calorie In...</p>
+            </div>
+            <div class="indexcol" id="calOut" style="padding-left: 20px; padding-top: 10px;">
+              <p>Calorie Out...</p>
+            </div>
+            <div class="indexcol" id="comment" style="padding-left: 20px; padding-top: 10px;">
+              <p>Comment...</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+<!-- calculate BMI section end  -->
+
+<!-- footer section starts -->
+
+<section class="footer">
+
+    <div class="share">
+        <a href="#" class="btn"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#" class="btn"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#" class="btn"> <i class="fab fa-instagram"></i> instagram </a>
+        <a href="#" class="btn"> <i class="fab fa-linkedin"></i> linkedin </a>
+        <a href="#" class="btn"> <i class="fab fa-pinterest"></i> pinterest </a>
+    </div>
+
+    <div class="credit"> created by <span> fortify fitness </span> | all rights reserved! </div>
+
+</section>
+
+<!-- footer section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- magnific popup js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<!-- aos js file cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- custom js link  -->
+<script src="{% static 'js/main.js' %}"></script>
+
+
+<script>
+
+AOS.init({
+    duration:1000,
+    delay:400
+});
+
+</script>
+
+</body>
+</html>

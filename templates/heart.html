@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html><head>
+<title>Diabetes Prediction</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'css/index_styling.css' %}">
+<link rel="shortcut icon" href="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-health-medical-kiranshastry-lineal-color-kiranshastry.png" type="image/x-icon">
+
+
+
+</head><body>
+  
+
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="/" class="w3-bar-item w3-button"><b>Fortify Fitness
+    </b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      
+      <a href="/about" class="w3-bar-item w3-button">About</a>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Predict Here</h3>
+  </div>
+
+  <div class="container">
+    <form action="/predictionss" method="POST" id="myForm" >
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>AGE</strong> <span class="tooltiptext">Age</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="age" placeholder="Enter your AGE" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Gender</strong>
+        <span class="tooltiptext">Gender</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="gender" required >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+              
+            </select>
+          </div>
+      </div>
+      
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Constrictive Pericarditis</strong>
+            <span class="tooltiptext">Diastolic Heart Failure</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="cp" >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+                <option value="0">Asymptomatic</option>
+                <option value="1">Atypical Angina</option> 
+                <option value="2">Non-Anginal Pain</option>
+                <option value="3">Typical Angina</option>
+              
+            </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>Trestbps</strong> <span class="tooltiptext">Person's resting blood pressure</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="trestbps" placeholder="Enter your Trestbps" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>Cholestrol</strong> <span class="tooltiptext">Person’s Cholestrol measurement</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="cholestrol" placeholder="Enter your Cholestrol" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Fasting Blood Sugar</strong>
+        <span class="tooltiptext">Fasting Sugar </span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="fbs" required >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>
+              
+            </select>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Resting Electro-Cardiographic Results</strong>
+        <span class="tooltiptext">Electro-Cardiographic Results </span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="restecg" required >
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="0">Showing probable or Definite left ventricular hypertrophy</option>
+              <option value="1">Normal</option>
+              <option value="2">ST-T wave abnormality</option>
+              
+            </select>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>Thalach</strong> <span class="tooltiptext">Maximum heart rate achieved</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="thalach" placeholder="Enter your Thalach" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+
+
+
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Exang</strong>
+            <span class="tooltiptext">Exercise induced angina</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="exang">
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="1">YES</option>
+              <option value="0">NO</option>
+              
+            </select>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="fname" class="tooltip"><strong>Oldpeak</strong> <span class="tooltiptext">ST depression induced by ecercise relative to rest</span> </label>
+        </div>
+        <div class="col-75">
+            <input type="number" step="any"  name="oldpeak" placeholder="Enter your oldpeak" style="height:40px ;width: 100%; border-radius: 4px;" required >
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Slope</strong>
+            <span class="tooltiptext">Slope of the peak exercise ST segment</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="slope">
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="0">Downsloping</option>
+              <option value="1">Flat</option>
+              <option value="2">Upsloping</option>
+              
+            </select>
+          </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Coronary Artery</strong>
+            <span class="tooltiptext">Number of major vessels</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="ca">
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              
+            </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-25">
+          <label for="lname" class="tooltip"><strong>Thalassemia</strong>
+            <span class="tooltiptext">Blood disorder</span></label>
+          
+        </div>
+        <div class="col-75">
+            <select name="thalach">
+                <option value="none" selected disabled hidden>
+                    Select an Option
+                </option>
+              <option value="0">Null</option>
+              <option value="1">Fixed Defect</option>
+              <option value="2">Normal Blood flow</option>
+              <option value="3">Reversible defect</option>
+              
+            </select>
+          </div>
+      </div>
+
+
+
+
+
+
+      
+        
+      
+      
+      
+      <div class="row">
+        <input type="submit" value="SUBMIT" style="width: 82px; height: 38px;margin-top: 12px;">
+        <input  type="reset" value="RESET" style="width: 82px; height: 38px;margin-top: 12px;">
+      </div>
+    </form>
+    
+    
+  </div>
+
+
+  
+
+<!-- End page content -->
+</div>
+
+
+
+
+</body>
+</html>
